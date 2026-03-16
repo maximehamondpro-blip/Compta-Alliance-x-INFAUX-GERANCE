@@ -1,0 +1,52 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.3.2">
+  <diagram name="Page-1" id="WT63db_jbbafgNDJ6wzt">
+    <mxGraphModel dx="1508" dy="729" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="host_box" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666;fontStyle=1;startSize=40;arcSize=10;" value="SERVEUR PHYSIQUE : OVH ADVANCE-3 (ROUBAIX, FR)" vertex="1">
+          <mxGeometry height="520" width="680" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cpu" parent="host_box" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffebee;strokeColor=#c62828;fontColor=#b71c1c;" value="&lt;b&gt;CPU&lt;/b&gt;&lt;br/&gt;AMD EPYC 4465P&lt;br/&gt;12c / 24t" vertex="1">
+          <mxGeometry height="60" width="180" x="30" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ram" parent="host_box" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1f5fe;strokeColor=#0288d1;fontColor=#01579b;" value="&lt;b&gt;RAM&lt;/b&gt;&lt;br/&gt;128 Go DDR5" vertex="1">
+          <mxGeometry height="60" width="180" x="250" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="net" parent="host_box" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e5f5;strokeColor=#7b1fa2;fontColor=#4a148c;" value="&lt;b&gt;RÉSEAU&lt;/b&gt;&lt;br/&gt;3 Gbits/s Illimité" vertex="1">
+          <mxGeometry height="60" width="180" x="470" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="nvme1" parent="host_box" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#eeeeee;strokeColor=#333;" value="&lt;b&gt;OS / PROXMOX&lt;/b&gt;&lt;br/&gt;2 x 960GB NVMe&lt;br/&gt;(Soft RAID 1)" vertex="1">
+          <mxGeometry height="80" width="120" x="30" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="nvme2" parent="host_box" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#eeeeee;strokeColor=#333;" value="&lt;b&gt;DATA / VMs&lt;/b&gt;&lt;br/&gt;2 x 3.84TB NVMe&lt;br/&gt;(Soft RAID 1)" vertex="1">
+          <mxGeometry height="80" width="120" x="530" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="proxmox" parent="host_box" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E65100;fontColor=#ffffff;fontStyle=1;fontSize=14;" value="HYPERVISEUR : PROXMOX VE" vertex="1">
+          <mxGeometry height="50" width="320" x="180" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="vm_zone" parent="host_box" style="swimlane;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#0078D4;startSize=30;" value="MACHINES VIRTUELLES (VMs)" vertex="1">
+          <mxGeometry height="230" width="620" x="30" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="sage" parent="vm_zone" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#2196f3;" value="&lt;b&gt;SAGE01-OVH&lt;/b&gt;&lt;br/&gt;ERP/Gestion" vertex="1">
+          <mxGeometry height="60" width="130" x="20" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="dc" parent="vm_zone" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#2196f3;" value="&lt;b&gt;DC01-OVH&lt;/b&gt;&lt;br/&gt;Active Directory" vertex="1">
+          <mxGeometry height="60" width="130" x="170" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="nxt" parent="vm_zone" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#2196f3;" value="&lt;b&gt;NXT01-OVH&lt;/b&gt;&lt;br/&gt;Nextcloud" vertex="1">
+          <mxGeometry height="60" width="130" x="320" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="sip" parent="vm_zone" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#fbc02d;" value="&lt;b&gt;SIP0-OVH&lt;/b&gt;&lt;br/&gt;IPBX / Voip" vertex="1">
+          <mxGeometry height="60" width="130" x="470" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="print" parent="vm_zone" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#2196f3;" value="&lt;b&gt;PRINT01-OVH&lt;/b&gt;&lt;br/&gt;Serveur Impress." vertex="1">
+          <mxGeometry height="60" width="130" x="20" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="pbs_vm" parent="vm_zone" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c8e6c9;strokeColor=#4caf50;fontStyle=1;" value="&lt;b&gt;PBS01-OVH&lt;/b&gt;&lt;br/&gt;Backup Server" vertex="1">
+          <mxGeometry height="60" width="130" x="170" y="140" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

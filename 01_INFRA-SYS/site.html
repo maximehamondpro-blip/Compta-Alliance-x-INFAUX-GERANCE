@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compta-Alliance | Expert Comptable & Conseil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- VARIABLES & RESET --- */
+        :root {
+            --primary-color: #0f172a; /* Bleu nuit profond */
+            --accent-color: #cca43b; /* Or mat */
+            --text-color: #334155;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .btn-contact {
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .btn-contact:hover {
+            background-color: #b08d2b;
+            color: var(--white);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* --- SERVICES --- */
+        .section-padding {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title span {
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* --- ABOUT --- */
+        .about {
+            background-color: var(--white);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item h4 {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        /* --- CONTACT --- */
+        .contact {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .contact h2 {
+            color: var(--white);
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+        }
+
+        .contact-info, .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .info-item i {
+            color: var(--accent-color);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        form button {
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        form button:hover {
+            background-color: #b08d2b;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #0b1120;
+            color: #94a3b8;
+            padding: 2rem 5%;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Pour simplifier l'exemple, menu caché sur mobile */
+            .contact-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-chart-line"></i> Compta-Alliance
+            </div>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">Le Cabinet</a></li>
+                <li><a href="#contact" class="btn-contact">Prendre RDV</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>Expertise & Conseil pour votre réussite</h1>
+            <p>Plus qu'un cabinet comptable, nous sommes le partenaire stratégique de votre croissance. Pilotez votre entreprise en toute sérénité.</p>
+            <a href="#contact" class="btn-contact">Demander un devis gratuit</a>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding">
+        <div class="section-title">
+            <h2>Nos Expertises</h2>
+            <span></span>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-calculator"></i>
+                <h3>Comptabilité</h3>
+                <p>Tenue de comptes, bilans, comptes de résultat et situations intermédiaires pour une vision claire.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-users"></i>
+                <h3>Gestion Sociale</h3>
+                <p>Établissement des bulletins de paie, contrats de travail et déclarations sociales.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-landmark"></i>
+                <h3>Fiscalité</h3>
+                <p>Optimisation fiscale, déclarations de TVA et impôts sur les sociétés. Conseils stratégiques.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-rocket"></i>
+                <h3>Création d'entreprise</h3>
+                <p>Choix du statut juridique, business plan et accompagnement dans toutes les démarches.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-gavel"></i>
+                <h3>Juridique</h3>
+                <p>Secrétariat juridique annuel, assemblées générales et modifications statutaires.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Digitalisation</h3>
+                <p>Mise en place d'outils numériques pour automatiser et simplifier votre gestion quotidienne.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding about">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="Réunion équipe comptable">
+        </div>
+        <div class="about-text">
+            <h2>Pourquoi nous choisir ?</h2>
+            <p>Chez <strong>Compta-Alliance</strong>, nous privilégions la proximité et la réactivité. Notre équipe d'experts est dédiée à vous fournir des solutions sur mesure adaptées à votre secteur d'activité.</p>
+            <br>
+            <p>Nous combinons l'expertise traditionnelle avec les meilleurs outils digitaux pour vous faire gagner du temps.</p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <h4>15+</h4>
+                    <p>Années d'expérience</p>
+                </div>
+                <div class="stat-item">
+                    <h4>450+</h4>
+                    <p>Clients satisfaits</p>
+                </div>
+                <div class="stat-item">
+                    <h4>24h</h4>
+                    <p>Réactivité garantie</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding contact">
+        <div class="section-title">
+            <h2>Contactez-nous</h2>
+            <span></span>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <p style="margin-bottom: 20px;">Vous avez un projet ou des questions ? Notre équipe est à votre écoute pour un premier rendez-vous sans engagement.</p>
+                
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>12 Avenue de la République, 75011 Paris</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>01 23 45 67 89</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>contact@compta-alliance.fr</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Lun - Ven : 09h00 - 18h00</span>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Votre Nom" required>
+                    <input type="email" placeholder="Votre Email" required>
+                    <input type="text" placeholder="Sujet (ex: Création d'entreprise)" required>
+                    <textarea rows="5" placeholder="Votre message..." required></textarea>
+                    <button type="submit">Envoyer le message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Compta-Alliance. Tous droits réservés. Mentions Légales | Politique de confidentialité</p>
+    </footer>
+
+</body>
+</html>
